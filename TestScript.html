@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script>
+var number;
+var winner;
+number = 0;
+winner = false;
+
+function increment() {
+	number++;
+	update();
+}
+
+function largerIncrement() {
+	number+=10;
+	update();
+}
+
+function largestIncrement() {
+	number+=100;
+	update();
+}
+
+function thousandIncrement() {
+	number+=1000;
+	update();
+}
+
+function tenthousandIncrement() {
+	number+=10000;
+	update();
+}
+
+function hundredthousandIncrement() {
+	number+=100000;
+	update();
+}
+
+function update() {
+	document.getElementById("displayNumber").innerHTML = "the number is: " + number;
+	if (number==10) {
+		document.getElementById("10button").innerHTML = 
+			'<button type="button" onclick = "largerIncrement()">add 10</button>';
+	}
+	if (number>=100) {
+		document.getElementById("100button").innerHTML = 
+			'<button type="button" onclick = "largestIncrement()">add 100</button>';
+	}
+	if (number>=1000) {
+		document.getElementById("1000button").innerHTML = 
+			'<button type="button" onclick = "thousandIncrement()">add 1000</button>';
+	}
+	if (number>=10000) {
+		document.getElementById("10000button").innerHTML = 
+			'<button type="button" onclick = "tenthousandIncrement()">add 10000</button>';
+	}
+	if (number>=100000) {
+		document.getElementById("100000button").innerHTML = 
+			'<button type="button" onclick = "hundredthousandIncrement()">add 100000</button>';
+	}
+	if (number>=1000000 && winner == false) {
+		document.getElementById("winner").innerHTML =
+			'<a href=level2.html>You win! Click here to continue</a>.'
+	}
+}
+</script>
+
+<body>
+
+
+<center>
+<h2> Iterate me </h2>
+
+<p id="displayNumber">the number is: 0</p>
+
+<button type="button" onclick="increment()">add 1</button>
+<p id="10button"></p>
+<p id="100button"></p>
+<p id="1000button"></p>
+<p id="10000button"></p>
+<p id="100000button"></p>
+<p id="winner"></p>
+</center>
+
+</body>
+</html>
